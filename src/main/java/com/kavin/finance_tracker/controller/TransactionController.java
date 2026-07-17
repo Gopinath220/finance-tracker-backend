@@ -27,19 +27,13 @@ public class TransactionController {
     @Autowired 
     private UserRepository userRepository;
 
-    /**
-     * Fetch all transactions belonging to the currently authenticated user session.
-     */
     @GetMapping
     public List<Transaction> getAllTransactions(Principal principal) {
         User user = userRepository.findByUsername(principal.getName())
                 .orElseThrow(() -> new RuntimeException("Authenticated user context not found"));
         return transactionRepository.findByUserId(user.getId());
     }
-
-    /**
-     * Create and attach a new transaction record to the logged-in user.
-     */
+     
     @PostMapping
     public Transaction createTransaction(@RequestBody Transaction transaction, Principal principal) {
         User user = userRepository.findByUsername(principal.getName())
@@ -48,9 +42,6 @@ public class TransactionController {
         return transactionRepository.save(transaction);
     }
 
-    /**
-     * Securely delete a transaction record after verifying ownership bounds.
-     */
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteTransaction(@PathVariable Long id, Principal principal) {
         Transaction transaction = transactionRepository.findById(id)
@@ -63,11 +54,7 @@ public class TransactionController {
         transactionRepository.delete(transaction);
         return ResponseEntity.ok("Transaction successfully deleted");
     }
-
-    /**
-     * Pure Spring Boot CSV Exporter
-     * Dynamically filters data strictly matching the incoming dashboard parameters.
-     */
+    
     @GetMapping("/export")
     public ResponseEntity<Resource> exportToCSV(
             @RequestParam("month") Integer month,
