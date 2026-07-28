@@ -16,7 +16,7 @@ public class Transaction {
     
     private String description;
     private Double amount;
-    private String type; // INCOME or EXPENSE
+    private String type; 
     private String category;
     private LocalDate date;
 
