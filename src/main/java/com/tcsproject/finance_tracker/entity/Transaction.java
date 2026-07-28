@@ -1,4 +1,4 @@
-package com.kavin.finance_tracker.entity;
+package com.tcsproject.finance_tracker.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

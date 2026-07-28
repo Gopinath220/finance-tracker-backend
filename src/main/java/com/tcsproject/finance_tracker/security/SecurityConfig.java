@@ -1,4 +1,4 @@
-package com.kavin.finance_tracker.security;
+package com.tcsproject.finance_tracker.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

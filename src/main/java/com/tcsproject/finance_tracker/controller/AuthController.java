@@ -1,12 +1,12 @@
-package com.kavin.finance_tracker.controller;
+package com.tcsproject.finance_tracker.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import com.kavin.finance_tracker.entity.User;
-import com.kavin.finance_tracker.repository.UserRepository;
-import com.kavin.finance_tracker.security.JwtUtil;
+import com.tcsproject.finance_tracker.entity.User;
+import com.tcsproject.finance_tracker.repository.UserRepository;
+import com.tcsproject.finance_tracker.security.JwtUtil;
 
 import java.util.Map;
 
