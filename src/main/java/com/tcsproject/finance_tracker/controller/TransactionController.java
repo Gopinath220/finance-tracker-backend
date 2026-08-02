@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/transactions")
-@CrossOrigin(origins = {"http://localhost:5173", "https://gopinath220.github.io"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://Gopinath220.github.io"})
 public class TransactionController {
 
     @Autowired 
